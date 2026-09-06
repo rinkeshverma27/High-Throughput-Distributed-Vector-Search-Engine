@@ -1,0 +1,65 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+bin/
+build/
+dist/
+
+# Storage / Database files
+data/
+wal/
+segments/
+snapshots/
+*.wal
+*.segment
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+compile_commands.json
+.clang-format
+.cache/
+
+# Profiling & Testing
+*.prof
+gmon.out
+coverage/
+*.gcda
+*.gcno
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/

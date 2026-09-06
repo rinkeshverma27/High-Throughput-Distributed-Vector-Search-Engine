@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: vectordb-node
+  labels:
+    app: vectordb
+spec:
+  serviceName: vectordb-service
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vectordb
+  template:
+    metadata:
+      labels:
+        app: vectordb
+    spec:
+      containers:
+      - name: vectordb
+        image: vectordb:latest
+        ports:
+        - containerPort: 9000
+          name: client-tcp
+        - containerPort: 9001
+          name: raft-consensus
+        volumeMounts:
+        - name: datadir
+          mountPath: /app/data
+  volumeClaimTemplates:
+  - metadata:
+      name: datadir
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 50Gi
